@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>about</title>
+    <title>About Me</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1>about page</h1>
+    <h1>About Me</h1>
+    <p>Hi! I am Sudeep Bachewar, a passionate developer learning Flask and Docker. This page is interactive!</p>
 
+    <h2>Simple Calculator</h2>
+    <form id="calcForm">
+        <input type="number" id="num1" placeholder="Number 1" required>
+        <input type="number" id="num2" placeholder="Number 2" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <div class="output" id="calcResult"></div>
+
+    <script>
+        const form = document.getElementById("calcForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 + num2;
+            document.getElementById("calcResult").innerText = `Result: ${result}`;
+        });
+    </script>
 </body>
 </html>

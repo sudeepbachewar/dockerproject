@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>contact</title>
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-contact page
+    <h1>Contact Me</h1>
+    <p>Send me a message and I’ll save it!</p>
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="5" cols="40" placeholder="Your Message" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+    </form>
+
+    {% if request.method == 'POST' %}
+        <p class="output">Thank you! Your message has been saved.</p>
+    {% endif %}
 </body>
 </html>

@@ -7,7 +7,24 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
+      - ./data:/app/data
+      - ./templates:/app/templates
+      - ./static:/app/static
+
     environment:
       - FLASK_ENV=development
     restart: unless-stopped
+
+#version: "3.9"
+#
+#services:
+#  flask-app:
+#    build: .
+#    container_name: flask_app
+#    ports:
+#      - "5000:5000"
+#    volumes:
+#      - .:/app
+#    environment:
+#      - FLASK_ENV=development
+#    restart: unless-stopped

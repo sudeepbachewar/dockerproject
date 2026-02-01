@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Messages Received</h1>
+
+    {% if contacts %}
+        <ul>
+            {% for c in contacts %}
+                <li>
+                    <strong>Name:</strong> {{ c.name }}<br>
+                    <strong>Email:</strong> {{ c.email }}<br>
+                    <strong>Message:</strong> {{ c.message }}<br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</body>
+</html>

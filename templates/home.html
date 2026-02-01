@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>home</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1>homepage</h1>
+    <h1>Welcome to My Flask App!</h1>
+    <p>Enter your name and I’ll greet you:</p>
 
+    <form id="greetForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <button type="submit">Greet Me</button>
+    </form>
+
+    <div class="output" id="greeting"></div>
+
+    <script>
+        const form = document.getElementById("greetForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            document.getElementById("greeting").innerText = `Hello, ${name}! Welcome to my site!`;
+        });
+    </script>
 </body>
 </html>
