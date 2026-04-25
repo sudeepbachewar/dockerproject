@@ -47,7 +47,7 @@ elif st.session_state.step == 1:
 elif st.session_state.step == 2:
     st.balloons()
     st.markdown(
-        "<h2 style='text-align:center; color:red;'>💀 fuck of gauri 💀</h2>",
+        "<h2 style='text-align:center; color:red;'>let's have sex gauri 🫦</h2>",
         unsafe_allow_html=True
     )
 
